@@ -1,3 +1,33 @@
+
+<!--  Start of adding multiple component-->
+
+
+<h1>
+  {{title}} </h1>  
+
+  <!-- <h1>{{hero.name}} details!</h1>
+  <div><label>Id : </label>{{hero.id }}</div>
+  <div><label>Name : </label><input [(ngModel)]="hero.name" placeholder="name"></div> -->
+
+
+  <h1>
+  My Heroes ...</h1>
+  <ul class="heroes">
+  <li *ngFor="let hero of heroes" [class.selected]="hero===selectedHero"
+  (click)="onSelect(hero)">
+
+  	<span class="badge">{{hero.id}}</span>{{hero.name}}
+  </li>
+  	
+  </ul>
+
+<!-- store id in hero and send to hero-detail.component -->
+ <app-hero-detail [hero]="selectedHero"></app-hero-detail> 
+
+
+<!--  End of adding multiple component-->
+
+
 <!-- Start of adding heroes in array and handling their click events -->
 
 
@@ -28,30 +58,3 @@
 
 
 <!-- End of adding heroes in array and handling their click events -->
-
-
-
-<h1>
-  {{title}} </h1>  
-
-  <!-- <h1>{{hero.name}} details!</h1>
-  <div><label>Id : </label>{{hero.id }}</div>
-  <div><label>Name : </label><input [(ngModel)]="hero.name" placeholder="name"></div> -->
-
-
-  <h1>
-  My Heroes ...</h1>
-  <ul class="heroes">
-  <li *ngFor="let hero of heroes" [class.selected]="hero===selectedHero"
-  (click)="onSelect(hero)">
-
-  	<span class="badge">{{hero.id}}</span>{{hero.name}}
-  </li>
-  	
-  </ul>
-
-  <div *ngIf="selectedHero">
-<h1>{{selectedHero.name}} details!</h1>
-<div><label>Id : </label>{{selectedHero.id }}</div>
-  <div><label>Name : </label><input [(ngModel)]="selectedHero.name" placeholder="name"></div>
-</div>  
