@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {Router} from '@angular/router';
+
 import { Hero } from './../models/hero';
 
 import { HeroService } from './../services/hero.service';
@@ -20,7 +22,10 @@ heroes:Hero[];
 //Handle on click event of Hero list item
 selectedHero:Hero;
 
-constructor(private heroService:HeroService)
+constructor(
+private heroService:HeroService,
+private router:Router
+)
 {
 	
 }
@@ -38,5 +43,10 @@ this.heroService.getHeroes().then(heroes => this.heroes=heroes);
   onSelect(hero:Hero):void {
   this.selectedHero=hero;
   }
+
+goToDetail()
+{
+	 this.router.navigate(['/detail',this.selectedHero.id]);
+}
 
 }

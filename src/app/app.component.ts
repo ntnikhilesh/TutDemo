@@ -14,17 +14,7 @@
 
 export class AppComponent {
 
-
-
-//Creating object of class Hero
- //hero:Hero={
- 
-  //id:101,  
-  // name:"Ravi"
-  //}; 
-
-
-  
+title='TOH CLI';  
 
  
 }

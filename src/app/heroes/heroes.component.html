@@ -13,4 +13,9 @@
   </ul>  
 
  <!--store id in hero and send to hero-detail.component --> 
- <app-hero-detail [hero]="selectedHero"></app-hero-detail>   
+ <!--<app-hero-detail [hero]="selectedHero"></app-hero-detail>    -->
+
+ <div *ngIf="selectedHero">
+ 	<h2>{{selectedHero.name | uppercase}} is my Hero</h2>
+ 	<button (click)="goToDetail()">View Details</button>
+ </div>
