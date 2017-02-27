@@ -1,9 +1,7 @@
 /* Start of adding service */
   import { Component } from '@angular/core';
 
-import { Hero } from './models/hero';
 
-import { HeroService } from './services/hero.service';
 
 @Component({
   selector: 'app-root',
@@ -15,33 +13,7 @@ import { HeroService } from './services/hero.service';
 
 
 export class AppComponent {
-  title = 'Tour of heroes';
-//Initializing array object using service class
 
-heroes:Hero[];
-
-
-//Handle on click event of Hero list item
-selectedHero:Hero;
-
-constructor(private heroService:HeroService)
-{
-	
-}
-
-ngOnInit():void{
-	this.getHeroes();
-} 
-
-getHeroes():void
-{
-this.heroService.getHeroes().then(heroes => this.heroes=heroes);
-	
-} 
-
-  onSelect(hero:Hero):void {
-  this.selectedHero=hero;
-  }
 
 
 //Creating object of class Hero
